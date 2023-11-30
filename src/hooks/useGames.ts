@@ -18,11 +18,11 @@ export interface Games{
 }
 
  
-  const useGames = (selectedGenre:Genre | null) => 
+  const useGames = (selectedGenre:Genre | null,selectedPlatform :Platform |null) => 
     useData<Games>('/games' ,{params:{
-        genres:selectedGenre?.id
+        genres:selectedGenre?.id,platforms:selectedPlatform?.id
 
-    }} ,[selectedGenre?.id])
+    }} ,[selectedGenre?.id,selectedPlatform?.id])
 
  
 
