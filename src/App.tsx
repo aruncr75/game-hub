@@ -40,7 +40,7 @@ function App() {
           <GenreList selectedGenre={gameQuery.genre} onSelectGenre={(genre) =>setGameQuery({...gameQuery,genre})} />
         </GridItem>
       </Show>
-      <GridItem area="main">
+      <GridItem  area="main" padding={{ base: 3,lg :0}} paddingRight={{ base: 3,lg :3}} >
           <Box padding={0}>
             <GameHeading gameQuery={gameQuery} />
                     <Flex   marginBottom={5}>
