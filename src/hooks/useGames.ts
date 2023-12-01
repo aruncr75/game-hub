@@ -25,7 +25,6 @@ export interface Games{
         platforms:gameQuesry.platform?.id,
         ordering:gameQuesry.sortOrder,
         search:gameQuesry.searchText,
-
     }} ,[gameQuesry])
 
  
