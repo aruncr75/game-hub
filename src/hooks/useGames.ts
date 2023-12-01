@@ -9,6 +9,7 @@ export interface Platform{
     name:string;
     slug:string;
     
+    
 }
 export interface Games{
     id:number;
@@ -16,6 +17,7 @@ export interface Games{
     background_image:string;
     parent_platforms:{platform:Platform}[];
     metacritic: number;
+    rating_top: number;
 }
 
  
