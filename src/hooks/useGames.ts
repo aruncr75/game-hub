@@ -1,12 +1,9 @@
-import { useEffect, useState } from "react"
-import apiClient, { FetchResponse } from "../services/api-client";
-import { CanceledError } from "axios";
-
 import { GameQuery } from "../App";
 import { useQuery } from "@tanstack/react-query";
 import { Platform } from "./usePlatforms";
+import APIClient, { FetchResponse } from "../services/api-client";
 
-export interface Games{
+export interface Game{
     id:number;
     name:string;
     background_image:string;
@@ -15,15 +12,15 @@ export interface Games{
     rating_top: number;
 }
 
- 
-  const useGames =(gameQuery:GameQuery)=> useQuery<FetchResponse<Games>,Error>({
+const apiClient =new APIClient<Game>('/games')
+  const useGames =(gameQuery:GameQuery)=> useQuery<FetchResponse<Game>,Error>({
     queryKey:['games',gameQuery],
-    queryFn:() => apiClient.get<FetchResponse<Games>>('/games',{params:{
-        genres:gameQuery.genre?.id,
-        parent_platforms:gameQuery.platform?.id,
-        ordering:gameQuery.sortOrder,
-        search:gameQuery.searchText,
-    }}).then(res =>res.data),
+    queryFn:() => apiClient.getAll({params:{
+      genres:gameQuery.genre?.id,
+      parent_platforms:gameQuery.platform?.id,
+      ordering:gameQuery.sortOrder,
+      search:gameQuery.searchText,
+  }}),
     
   })
 
