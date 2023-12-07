@@ -1,12 +1,12 @@
-import { Games } from "../hooks/useGames";
 import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import { PlatfomIconList } from "./PlatfomIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../services/image-url";
 import Emoji from "./Emoji";
+import { Game } from "../hooks/useGames";
 
 interface Props {
-  game: Games;
+  game: Game;
 }
 
 const GameCard = ({ game }: Props) => {
