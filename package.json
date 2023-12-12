@@ -22,7 +22,8 @@
     "react-icons": "^4.7.1",
     "react-infinite-scroll-component": "6.1",
     "uuid": "^9.0.1",
-    "vercel": "^32.6.0"
+    "vercel": "^32.6.0",
+    "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
