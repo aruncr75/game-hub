@@ -47,9 +47,17 @@ const ErrorPage = () => {
             <Button
               colorScheme="primary"
               variant="outline"
+              marginRight={5}
               onClick={() => window.location.reload()}
             >
-              Retry Warp Drive
+              Retry
+            </Button>
+            <Button
+              colorScheme="primary"
+              variant="outline"
+              onClick={() => window.location.href = '/'}
+            >
+              Go Back
             </Button>
           </Box>
         ) : (
